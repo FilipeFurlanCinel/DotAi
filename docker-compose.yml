@@ -1,0 +1,16 @@
+services:
+  # Optional / secondary runtime. Prefer the local `dot-ai` dotnet tool for daily use.
+  # From a repo you want to commit in:
+  #   HOST_REPO=/path/to/repo docker compose run --rm -it dot-ai ...
+  dot-ai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /workspace
+    volumes:
+      - ${HOST_REPO:-.}:/workspace
+    environment:
+      ConnectionStrings__DefaultConnection: "Data Source=/workspace/.dotai/DotAi.db"
+      DOTAI_WORKSPACE: /workspace
+    stdin_open: true
+    tty: true

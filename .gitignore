@@ -1,0 +1,21 @@
+# Build
+**/bin/
+**/obj/
+**/artifacts/
+**/.vs/
+**/*.user
+**/*.DotSettings.user
+*.nupkg
+*.snupkg
+
+# DotAi per-repo data
+.dotai/DotAi.db
+.dotai/DotAi.db-shm
+.dotai/DotAi.db-wal
+*.db
+*.db-shm
+*.db-wal
+
+# OS / IDE
+.DS_Store
+.idea/
